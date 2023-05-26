@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h1> Change Profile Picture</h1>
+<form method="post", enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="Document">
+    <button type="submit">Upload file</button>
+
+</form>
+{% endblock %}
