@@ -152,28 +152,3 @@ class image_upload_view(APIView):
         posts = Image.objects.all()
         return render(request, 'base.html', {'form': form , 'posts':posts})
 
-
-# def profile(request ,pk):
-#     userReference = User.objects.get(username=pk)
-#     userProfile = Profile.objects.get(user=userReference)
-#     userPosts=Image.objects.filter(user=pk)
-#     numberOfPosts=len(userPosts)
-#     context ={
-#         'userPosts':userPosts,
-#         'numberOfPosts':numberOfPosts,
-#         'userProfile':userProfile,
-#     }
-#     return render(request, 'profile.html',context)
-
-
-# def profileTest(request ,pk):
-#     userReference = User.objects.get(username=pk)
-#     userProfile = Profile.objects.get(user=userReference)
-#     userPosts=Image.objects.filter(user=pk)
-#     numberOfPosts=len(userPosts)
-#     context ={
-#         'userPosts':userPosts,
-#         'numberOfPosts':numberOfPosts,
-#         'userProfile':userProfile,
-#     }
-#     return render(request, 'profileTest.html',context)
