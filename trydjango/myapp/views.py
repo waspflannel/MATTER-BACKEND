@@ -40,6 +40,13 @@ class GetUsersView(APIView):
         users=ProfileSerializer(users,many=True)
         return Response(users.data)
 
+class GetAllUserProfile(APIView):
+    def get(self,request,pk, format=None):
+        userObject = User.objects.get(username = pk)
+        userProfile = Profile.objects.get(user=userObject)
+        userProfile = ProfileSerializer(userProfile)
+        return Response({'profile': userProfile.data})
+
 
 class GetUserProfile(APIView):
     def get(self,request, format=None):
@@ -49,8 +56,6 @@ class GetUserProfile(APIView):
         user = User.objects.get(id=user.id)###
         user_profile = Profile.objects.get(user=user)
         user_profile = ProfileSerializer(user_profile)
-
-
         return Response({'profile': user_profile.data , 'username': str(username)})
 
 

@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include
 from django.views.generic import TemplateView;
-from .views import GetUsersView , GetImageInfoView , GetUserProfile , getImageInfo , loginView , registerView , image_upload_view
+from .views import GetUsersView , GetImageInfoView , GetUserProfile , getImageInfo , loginView , registerView , image_upload_view , GetAllUserProfile
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns =[
@@ -27,6 +27,11 @@ urlpatterns =[
 
     path('api/user', GetUserProfile.as_view()),
     path('api/images', getImageInfo.as_view()),
+
+    path('api/<str:pk>',GetAllUserProfile.as_view())
+
+
+
 
 
     #path('api/csrf', GetCSRFToken.as_view()),
