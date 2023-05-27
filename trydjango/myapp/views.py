@@ -25,7 +25,6 @@ from rest_framework import permissions
 from django.utils.decorators import method_decorator
 from rest_framework import permissions
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
-from braces.views import CsrfExemptMixin
 
 def homePage(request):
     return render(request, 'base.html', {})
