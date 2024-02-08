@@ -1,4 +1,4 @@
-The Backend for MATTER , Theres a front end repository containing the react code... Check it out
+The Backend for my social media website called Matter. 
 
 
 main backend code is in trydjango > myApp
